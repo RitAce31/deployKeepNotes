@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 from urllib.parse import urlparse
 from django.core.management.utils import get_random_secret_key
-import sys
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +32,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 DEBUG = True
 # DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['keep-notes-by-ritace.onrender.com']
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
 
 
@@ -71,7 +70,7 @@ ROOT_URLCONF = 'keepproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '../../front-end/build')],
+        'DIRS': [os.path.join(BASE_DIR, 'front-end/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,7 +136,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../../front-end/build/static/'),
+    os.path.join(BASE_DIR , 'front-end/build/static'),
 )
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
