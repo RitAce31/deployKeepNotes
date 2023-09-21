@@ -2,7 +2,7 @@
 /front-end/node_modules
 
 # production
-/build
+/front-end/build
 
 # env
 /env
